@@ -4,6 +4,11 @@ import NotFound from "@/pages/NotFound";
 import Dashboard from "@/pages/Dashboard";
 import ClientsList from "@/pages/CRM/ClientsList";
 import JobsList from "@/pages/Jobs/JobsList";
+import DevicesList from "@/pages/Assets/DevicesList";
+import InventoryList from "@/pages/Inventory/InventoryList";
+import EngineersList from "@/pages/Engineers/EngineersList";
+import InvoicesList from "@/pages/Finance/InvoicesList";
+import StaffList from "@/pages/Staff/StaffList";
 import DashboardLayout from "@/components/DashboardLayout";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { ROLES } from "@shared/const";
@@ -48,10 +53,7 @@ function Router() {
       <Route path={"/devices"}>
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
-            <div className="text-center py-12">
-              <h1 className="text-2xl font-bold mb-2">Device & Asset Management</h1>
-              <p className="text-muted-foreground">Coming soon...</p>
-            </div>
+            <DevicesList />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>
@@ -59,10 +61,7 @@ function Router() {
       <Route path={"/inventory"}>
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
-            <div className="text-center py-12">
-              <h1 className="text-2xl font-bold mb-2">Inventory & Warehouse</h1>
-              <p className="text-muted-foreground">Coming soon...</p>
-            </div>
+            <InventoryList />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>
@@ -70,10 +69,7 @@ function Router() {
       <Route path={"/engineers"}>
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
-            <div className="text-center py-12">
-              <h1 className="text-2xl font-bold mb-2">Field Engineers</h1>
-              <p className="text-muted-foreground">Coming soon...</p>
-            </div>
+            <EngineersList />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>
@@ -110,10 +106,7 @@ function Router() {
       <Route path={"/finance/invoices"}>
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.FINANCE]}>
-            <div className="text-center py-12">
-              <h1 className="text-2xl font-bold mb-2">Invoices</h1>
-              <p className="text-muted-foreground">Coming soon...</p>
-            </div>
+            <InvoicesList />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>
@@ -132,10 +125,7 @@ function Router() {
       <Route path={"/staff"}>
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN]}>
-            <div className="text-center py-12">
-              <h1 className="text-2xl font-bold mb-2">Staff Management</h1>
-              <p className="text-muted-foreground">Coming soon...</p>
-            </div>
+            <StaffList />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>

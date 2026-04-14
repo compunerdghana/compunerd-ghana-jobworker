@@ -46,24 +46,24 @@
 - [x] Build job search and filter
 
 ## Phase 6: Device & Asset Management
-- [ ] Create device/asset registration page
+- [x] Create device/asset registration page
 - [ ] Build device detail page with repair history
-- [ ] Implement warranty tracking
-- [ ] Add device search and filter
+- [x] Implement warranty tracking
+- [x] Add device search and filter
 - [ ] Create device assignment to clients
 - [ ] Build repair history timeline
 
 ## Phase 7: Inventory & Warehouse
-- [ ] Create inventory management page
+- [x] Create inventory management page
 - [ ] Build stock item creation form
-- [ ] Implement quantity tracking
-- [ ] Add low-stock alerts
+- [x] Implement quantity tracking
+- [x] Add low-stock alerts
 - [ ] Create stock in/out transaction tracking
-- [ ] Build inventory search and filter
+- [x] Build inventory search and filter
 - [ ] Implement item usage tracking per job
 
 ## Phase 8: Field Engineer Portal
-- [ ] Create engineer profiles page
+- [x] Create engineer profiles page
 - [ ] Build engineer assignment view
 - [ ] Implement check-in/check-out functionality
 - [ ] Create daily work log
@@ -71,28 +71,28 @@
 - [ ] Add location/GPS tracking view (placeholder)
 
 ## Phase 9: Financial System
-- [ ] Create invoicing page
+- [x] Create invoicing page
 - [ ] Build invoice generation and PDF export
 - [ ] Implement receipt tracking
-- [ ] Create payment tracking system
+- [x] Create payment tracking system
 - [ ] Build income/expense accounting page
 - [ ] Implement financial reports and summaries
 
 ## Phase 10: Staff Management & HR
-- [ ] Create employee records page
+- [x] Create employee records page
 - [ ] Build employee profile page
 - [ ] Implement attendance tracking
 - [ ] Create payroll summary view
 - [ ] Add salary and commission tracking
-- [ ] Build staff search and filter
+- [x] Build staff search and filter
 
 ## Phase 11: Role-Based Access Control
-- [ ] Implement Admin role with full access
-- [ ] Implement Manager role with team management access
-- [ ] Implement Field Engineer role with limited access
-- [ ] Implement Finance Staff role with financial access
-- [ ] Create protected procedures for each role
-- [ ] Add route-level permission checks
+- [x] Implement Admin role with full access
+- [x] Implement Manager role with team management access
+- [x] Implement Field Engineer role with limited access
+- [x] Implement Finance Staff role with financial access
+- [x] Create protected procedures for each role
+- [x] Add route-level permission checks
 - [ ] Build role management interface for Admin
 
 ## Phase 12: Polish & Deployment
