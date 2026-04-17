@@ -21,7 +21,7 @@ import {
 import { trpc } from "@/lib/trpc";
 import { Plus, Search, Clock, AlertCircle } from "lucide-react";
 import { JOB_STATUS, JOB_PRIORITY } from "@shared/const";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 const statusColors: Record<string, string> = {
   open: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100",
@@ -38,6 +38,7 @@ const priorityColors: Record<string, string> = {
 };
 
 export default function JobsList() {
+  const [, setLocation] = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [priorityFilter, setPriorityFilter] = useState<string>("all");
@@ -224,11 +225,12 @@ export default function JobsList() {
                         {new Date(job.createdAt).toLocaleDateString()}
                       </TableCell>
                       <TableCell>
-                        <Link href={`/jobs/${job.id}`}>
-                          <a className="text-primary hover:underline text-sm font-medium">
-                            View
-                          </a>
-                        </Link>
+                        <button
+                          onClick={() => setLocation(`/jobs/${job.id}`)}
+                          className="text-primary hover:underline text-sm font-medium"
+                        >
+                          View
+                        </button>
                       </TableCell>
                     </TableRow>
                   ))}

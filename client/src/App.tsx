@@ -3,12 +3,18 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import Dashboard from "@/pages/Dashboard";
 import ClientsList from "@/pages/CRM/ClientsList";
+import CreateClientForm from "@/pages/CRM/CreateClientForm";
+import ClientDetail from "@/pages/CRM/ClientDetail";
 import JobsList from "@/pages/Jobs/JobsList";
+import JobDetail from "@/pages/Jobs/JobDetail";
 import DevicesList from "@/pages/Assets/DevicesList";
+import DeviceDetail from "@/pages/Assets/DeviceDetail";
 import InventoryList from "@/pages/Inventory/InventoryList";
 import EngineersList from "@/pages/Engineers/EngineersList";
+import EngineerDetail from "@/pages/Engineers/EngineerDetail";
 import InvoicesList from "@/pages/Finance/InvoicesList";
 import StaffList from "@/pages/Staff/StaffList";
+import StaffDetail from "@/pages/Staff/StaffDetail";
 import DashboardLayout from "@/components/DashboardLayout";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { ROLES } from "@shared/const";
@@ -34,10 +40,26 @@ function Router() {
       </Route>
 
       {/* Placeholder routes for future modules */}
-      <Route path={"/crm/clients"}>
+         <Route path={"/crm/clients"}>
         <DashboardLayout>
-          <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
+          <ProtectedRoute allowedRoles={[ROLES.MANAGER, ROLES.ADMIN]}>
             <ClientsList />
+          </ProtectedRoute>
+        </DashboardLayout>
+      </Route>
+
+      <Route path={"/crm/clients/create"}>
+        <DashboardLayout>
+          <ProtectedRoute allowedRoles={[ROLES.MANAGER, ROLES.ADMIN]}>
+            <CreateClientForm />
+          </ProtectedRoute>
+        </DashboardLayout>
+      </Route>
+
+      <Route path={"/crm/clients/:id"}>
+        <DashboardLayout>
+          <ProtectedRoute allowedRoles={[ROLES.MANAGER, ROLES.ADMIN]}>
+            <ClientDetail />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>
@@ -50,10 +72,26 @@ function Router() {
         </DashboardLayout>
       </Route>
 
+      <Route path={"/jobs/:id"}>
+        <DashboardLayout>
+          <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
+            <JobDetail />
+          </ProtectedRoute>
+        </DashboardLayout>
+      </Route>
+
       <Route path={"/devices"}>
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
             <DevicesList />
+          </ProtectedRoute>
+        </DashboardLayout>
+      </Route>
+
+      <Route path={"/devices/:id"}>
+        <DashboardLayout>
+          <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
+            <DeviceDetail />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>
@@ -68,8 +106,16 @@ function Router() {
 
       <Route path={"/engineers"}>
         <DashboardLayout>
-          <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
+          <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER, ROLES.FIELD_ENGINEER]}>
             <EngineersList />
+          </ProtectedRoute>
+        </DashboardLayout>
+      </Route>
+
+      <Route path={"/engineers/:id"}>
+        <DashboardLayout>
+          <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER, ROLES.FIELD_ENGINEER]}>
+            <EngineerDetail />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>
@@ -126,6 +172,14 @@ function Router() {
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN]}>
             <StaffList />
+          </ProtectedRoute>
+        </DashboardLayout>
+      </Route>
+
+      <Route path={"/staff/:id"}>
+        <DashboardLayout>
+          <ProtectedRoute allowedRoles={[ROLES.ADMIN]}>
+            <StaffDetail />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>

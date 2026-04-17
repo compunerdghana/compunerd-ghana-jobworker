@@ -21,7 +21,7 @@ import {
 import { trpc } from "@/lib/trpc";
 import { Plus, Search, Phone, Mail, MapPin } from "lucide-react";
 import { CLIENT_TYPES } from "@shared/const";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 const statusColors: Record<string, string> = {
   lead: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100",
@@ -30,6 +30,7 @@ const statusColors: Record<string, string> = {
 };
 
 export default function ClientsList() {
+  const [, setLocation] = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("all");
   const [statusFilter, setStatusFilter] = useState<string>("all");
@@ -56,7 +57,7 @@ export default function ClientsList() {
           <h1 className="text-3xl font-bold text-foreground">Clients</h1>
           <p className="text-muted-foreground mt-2">Manage your client relationships</p>
         </div>
-        <Button className="gap-2">
+        <Button className="gap-2" onClick={() => setLocation("/crm/clients/create")}>
           <Plus className="w-4 h-4" />
           New Client
         </Button>
