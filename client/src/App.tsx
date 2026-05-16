@@ -15,6 +15,10 @@ import EngineerDetail from "@/pages/Engineers/EngineerDetail";
 import InvoicesList from "@/pages/Finance/InvoicesList";
 import StaffList from "@/pages/Staff/StaffList";
 import StaffDetail from "@/pages/Staff/StaffDetail";
+import AddInventoryForm from "@/pages/Inventory/AddInventoryForm";
+import CreateEngineerForm from "@/pages/Engineers/CreateEngineerForm";
+import CreateInvoiceForm from "@/pages/Finance/CreateInvoiceForm";
+import CreateStaffForm from "@/pages/Staff/CreateStaffForm";
 import DashboardLayout from "@/components/DashboardLayout";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { ROLES } from "@shared/const";
@@ -120,6 +124,14 @@ function Router() {
         </DashboardLayout>
       </Route>
 
+      <Route path={"/engineers/create"}>
+        <DashboardLayout>
+          <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
+            <CreateEngineerForm />
+          </ProtectedRoute>
+        </DashboardLayout>
+      </Route>
+
       <Route path={"/engineer/jobs"}>
         <DashboardLayout>
           <div className="text-center py-12">
@@ -157,6 +169,14 @@ function Router() {
         </DashboardLayout>
       </Route>
 
+      <Route path={"/finance/create"}>
+        <DashboardLayout>
+          <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.FINANCE]}>
+            <CreateInvoiceForm />
+          </ProtectedRoute>
+        </DashboardLayout>
+      </Route>
+
       <Route path={"/finance/reports"}>
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.FINANCE]}>
@@ -180,6 +200,14 @@ function Router() {
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN]}>
             <StaffDetail />
+          </ProtectedRoute>
+        </DashboardLayout>
+      </Route>
+
+      <Route path={"/staff/create"}>
+        <DashboardLayout>
+          <ProtectedRoute allowedRoles={[ROLES.ADMIN]}>
+            <CreateStaffForm />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>
