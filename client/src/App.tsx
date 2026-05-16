@@ -19,6 +19,8 @@ import AddInventoryForm from "@/pages/Inventory/AddInventoryForm";
 import CreateEngineerForm from "@/pages/Engineers/CreateEngineerForm";
 import CreateInvoiceForm from "@/pages/Finance/CreateInvoiceForm";
 import CreateStaffForm from "@/pages/Staff/CreateStaffForm";
+import CreateJobForm from "@/pages/Jobs/CreateJobForm";
+import FinancialReports from "@/pages/Finance/FinancialReports";
 import DashboardLayout from "@/components/DashboardLayout";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { ROLES } from "@shared/const";
@@ -80,6 +82,14 @@ function Router() {
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
             <JobDetail />
+          </ProtectedRoute>
+        </DashboardLayout>
+      </Route>
+
+      <Route path={"/jobs/create"}>
+        <DashboardLayout>
+          <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
+            <CreateJobForm />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>
@@ -180,10 +190,7 @@ function Router() {
       <Route path={"/finance/reports"}>
         <DashboardLayout>
           <ProtectedRoute allowedRoles={[ROLES.ADMIN, ROLES.FINANCE]}>
-            <div className="text-center py-12">
-              <h1 className="text-2xl font-bold mb-2">Financial Reports</h1>
-              <p className="text-muted-foreground">Coming soon...</p>
-            </div>
+            <FinancialReports />
           </ProtectedRoute>
         </DashboardLayout>
       </Route>
