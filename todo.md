@@ -111,7 +111,7 @@
 ## Authentication Enhancement
 - [x] Add username/password login form
 - [x] Implement password hashing (bcrypt)
-- [ ] Create user registration page
+- [x] Create user registration page
 - [ ] Add password reset functionality
 - [x] Implement session management
 - [x] Create login page UI

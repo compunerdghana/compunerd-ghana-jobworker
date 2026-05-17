@@ -22,6 +22,7 @@ import CreateStaffForm from "@/pages/Staff/CreateStaffForm";
 import CreateJobForm from "@/pages/Jobs/CreateJobForm";
 import FinancialReports from "@/pages/Finance/FinancialReports";
 import Login from "@/pages/Login";
+import Register from "@/pages/Register";
 import DashboardLayout from "@/components/DashboardLayout";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { ROLES } from "@shared/const";
@@ -34,6 +35,7 @@ function Router() {
     <Switch>
       {/* Public routes */}
       <Route path={"/login"} component={Login} />
+      <Route path={"/register"} component={Register} />
 
       {/* Dashboard routes - wrapped in DashboardLayout */}
       <Route path={"/dashboard"}>
