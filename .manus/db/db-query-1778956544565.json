@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE `users` MODIFY COLUMN `openId` varchar(64);\nALTER TABLE `users` MODIFY COLUMN `role` enum('admin','manager','field_engineer','finance','user') NOT NULL DEFAULT 'user';\nALTER TABLE `users` ADD `username` varchar(100);\nALTER TABLE `users` ADD `passwordHash` text;\nALTER TABLE `users` ADD CONSTRAINT `users_username_unique` UNIQUE(`username`);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 44si3E4fZLXKYLB.root --database CkSDd5opEBHhbujUNDGo66 --execute ALTER TABLE `users` MODIFY COLUMN `openId` varchar(64);\nALTER TABLE `users` MODIFY COLUMN `role` enum('admin','manager','field_engineer','finance','user') NOT NULL DEFAULT 'user';\nALTER TABLE `users` ADD `username` varchar(100);\nALTER TABLE `users` ADD `passwordHash` text;\nALTER TABLE `users` ADD CONSTRAINT `users_username_unique` UNIQUE(`username`);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1244
+}

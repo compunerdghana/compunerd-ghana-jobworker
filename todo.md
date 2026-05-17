@@ -106,3 +106,14 @@
 
 ## Completed Features
 (Items will be moved here as they are completed)
+
+
+## Authentication Enhancement
+- [x] Add username/password login form
+- [x] Implement password hashing (bcrypt)
+- [ ] Create user registration page
+- [ ] Add password reset functionality
+- [x] Implement session management
+- [x] Create login page UI
+- [x] Add logout functionality
+- [x] Implement remember me feature

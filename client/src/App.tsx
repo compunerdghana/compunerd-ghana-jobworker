@@ -21,6 +21,7 @@ import CreateInvoiceForm from "@/pages/Finance/CreateInvoiceForm";
 import CreateStaffForm from "@/pages/Staff/CreateStaffForm";
 import CreateJobForm from "@/pages/Jobs/CreateJobForm";
 import FinancialReports from "@/pages/Finance/FinancialReports";
+import Login from "@/pages/Login";
 import DashboardLayout from "@/components/DashboardLayout";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { ROLES } from "@shared/const";
@@ -31,6 +32,9 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 function Router() {
   return (
     <Switch>
+      {/* Public routes */}
+      <Route path={"/login"} component={Login} />
+
       {/* Dashboard routes - wrapped in DashboardLayout */}
       <Route path={"/dashboard"}>
         <DashboardLayout>
