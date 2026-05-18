@@ -49,7 +49,7 @@ Create a `.env.local` file in the project root:
 
 ```env
 # Database
-DATABASE_URL=postgresql://user:password@db.supabasehost.com:5432/postgres
+DATABASE_URL=postgresql://user:Khobi%40929927799@db.supabasehost.com:5432/postgres
 
 # OAuth (Manus)
 VITE_APP_ID=your-manus-app-id
@@ -57,11 +57,11 @@ OAUTH_SERVER_URL=https://api.manus.im
 VITE_OAUTH_PORTAL_URL=https://portal.manus.im
 
 # JWT
-JWT_SECRET=your-jwt-secret-key
+JWT_SECRET=9f83h2h9dh2h9d2h9d2h9dh2h9d2h9d
 
 # Owner
-OWNER_OPEN_ID=your-owner-open-id
-OWNER_NAME=Your Name
+OWNER_OPEN_ID=310519663554215079
+OWNER_NAME=Compunerd Ghana
 
 # Manus APIs
 BUILT_IN_FORGE_API_URL=https://api.manus.im
