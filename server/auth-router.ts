@@ -159,4 +159,58 @@ export const authRouter = router({
       success: true,
     } as const;
   }),
+
+  requestPasswordReset: publicProcedure
+    .input(
+      z.object({
+        email: z.string().email(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      try {
+        const db = await getDb();
+        if (!db) {
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "Database connection failed",
+          });
+        }
+
+        const user = await db
+          .select()
+          .from(users)
+          .where(eq(users.email, input.email))
+          .limit(1);
+
+        // Always return success for security (don't reveal if email exists)
+        if (user.length === 0) {
+          return {
+            success: true,
+            message: "If an account exists with this email, a reset link has been sent.",
+          };
+        }
+
+        // Generate a password reset token (in production, use a proper token service)
+        const resetToken = Buffer.from(`${user[0].id}-${Date.now()}`).toString("base64");
+
+        // In a real application, you would:
+        // 1. Save this token to the database with an expiry time
+        // 2. Send an email with a link like: /reset-password?token=resetToken
+        // 3. Validate the token when user submits new password
+
+        console.log(`[Password Reset] Token for ${input.email}: ${resetToken}`);
+
+        return {
+          success: true,
+          message: "If an account exists with this email, a reset link has been sent.",
+        };
+      } catch (error) {
+        if (error instanceof TRPCError) throw error;
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Failed to process password reset request",
+        });
+      }
+    }),
 });
+

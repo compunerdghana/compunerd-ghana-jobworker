@@ -117,3 +117,17 @@
 - [x] Create login page UI
 - [x] Add logout functionality
 - [x] Implement remember me feature
+
+
+## Supabase & Vercel Deployment
+- [ ] Configure Supabase PostgreSQL connection string
+- [ ] Update environment variables for Supabase
+- [ ] Migrate database schema to Supabase
+- [ ] Test Supabase connection
+- [ ] Set up Vercel deployment configuration
+- [ ] Create vercel.json configuration file
+- [ ] Set up GitHub integration with Vercel
+- [ ] Configure environment variables in Vercel
+- [ ] Deploy to Vercel
+- [ ] Test production deployment
+- [ ] Create Supabase + Vercel deployment guide
